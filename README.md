@@ -518,6 +518,18 @@ for (var height=48, yearlyGrowth=1, age=8; age<=18; height += yearlyGrowth){
 console.log("Adult height is ", height, " inches!");
 ```
 
+
+A `for...in` loop can loop through any object. Watch out, though. If you're dealing with inheritance, this loop may give you more than you expect. (More on that later!)
+
+```js
+  var triangle = { color: 'green', sides: [3,4,5] }
+  for (var key in object) {
+    console.log('value for ' + key + ' is ' + object[key]);
+  }
+```
+
+
+
 #### `break`
 
 The reserved word `break` will break us out of a loop immediately.  
