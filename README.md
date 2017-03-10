@@ -288,6 +288,55 @@ if ( badThing ) {
 
 ```
 
+#### Block Scope
+
+<img width=200 alt="ES6 JavaScript" src="https://cloud.githubusercontent.com/assets/3254910/23785405/6ffbd794-051c-11e7-9731-d1f0e7479a5a.png">
+
+Variables created with JavaScript's `let` and `const` reserved words have "block scope", meaning they only exist INSIDE the "block" where they were created.  
+
+So what is a block?
+
+A block is the portion of an `if`, `else`, `for`, `switch`, or similar statement that is between `{` and `}`.  (Functions use a slightly different kind of scope - code inside a function has the power to look outside into larger scopes.)
+
+1. In the example below, which line(s) are inside the `if` statement's block?
+
+	```js
+	1
+	2 if ( degrees === 90 ) {
+	3
+	4     console.log('right angle');
+	5 }
+	6
+	```
+
+
+1. In the ES6 example below, on what line(s) is the `angle` variable in scope?
+
+	```js
+	1
+	2 if ( degrees === 90 ) {
+	3     let angle = 'right';
+	4     console.log(`${angle} angle`);
+	5 }
+	6
+	```
+
+
+
+1. In the ES6 or ES5 example below, on what lines is the `angle` variable in scope?
+
+	```js
+	1
+	2 if ( degrees === 90 ) {
+	3     var angle = 'right';
+	4     console.log(angle + ' angle');
+	5 }
+	6
+	```
+
+
+
+
 #### Check for Understanding: Conditionals!
 
 Whiteboard with a partner:
@@ -410,6 +459,15 @@ var minutesBeforeWork = 80;                    // setup:  plan to wake up early
 while (minutesBeforeWork > 30) {               // continue condition: leave enough time to get day clothes on
   minutesBeforeWork = minutesBeforeWork - 5;   // update: hit snooze!
 }
+```
+
+There is also a `do`...`while` loop. This executes the code inside the block once before deciding whether to continue.
+
+```js
+var input;
+do {
+  input = get_input();
+} while (!isValid(input));
 ```
 
 #### `for` loops
